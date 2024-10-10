@@ -1,6 +1,7 @@
 package vista;
 
 import java.awt.Dimension;
+import javax.swing.JDesktopPane;
 
 /**
  *
@@ -8,15 +9,24 @@ import java.awt.Dimension;
  */
 public class FrmMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmMenu
-     */
+    public static JDesktopPane jDesktopPane_menu;
+    
+    
     public FrmMenu() {
         initComponents();
         this.setSize(new Dimension(1200,700));
         this.setExtendedState(this.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         this.setTitle("Sistema de Reservas");
+        
+        this.setLayout(null);
+        jDesktopPane_menu = new JDesktopPane();
+        
+        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+        this.jDesktopPane_menu.setBounds(0, 0, ancho, (alto - 110));
+        this.add(jDesktopPane_menu);
+        
         
     }
 
